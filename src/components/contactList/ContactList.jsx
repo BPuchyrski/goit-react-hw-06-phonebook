@@ -40,37 +40,6 @@ const ContactList = ({ contacts, delite, filter }) => {
   );
 };
 
-// class ContactList extends Component {
-//   render() {
-//     const { contacts, delite, filter } = this.props;
-//     return (
-//       <ul>
-//         {filter === ''
-//           ? contacts.map(contact => {
-//               return (
-//                 <li key={nanoid()}>
-//                   {contact.name}: {contact.number}
-//                   <button number={contact.number} onClick={delite}>
-//                     Remove
-//                   </button>
-//                 </li>
-//               );
-//             })
-//           : filter.map(contact => {
-//               return (
-//                 <li key={nanoid()}>
-//                   {contact.name}: {contact.number}
-//                   <button number={contact.number} onClick={delite}>
-//                     Remove
-//                   </button>
-//                 </li>
-//               );
-//             })}
-//       </ul>
-//     );
-//   }
-// }
-
 ContactList.propTypes = {
   contact: PropTypes.array,
   delite: PropTypes.func,

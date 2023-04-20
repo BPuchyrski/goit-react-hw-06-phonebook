@@ -5,7 +5,6 @@ const parsedContacts = JSON.parse(localStorageContacts);
 
 const initialState = {
   contacts: parsedContacts || [],
-  filter: '',
 };
 
 export const contactsListSlice = createSlice({
@@ -21,11 +20,13 @@ export const contactsListSlice = createSlice({
       } else {
         state.contacts.push(action.payload);
       }
+      localStorage.setItem('contacts', JSON.stringify(state.contacts));
     },
     removeContact: (state, action) => {
       state.contacts = state.contacts.filter(
         contact => contact.number !== action.payload
       );
+      localStorage.setItem('contacts', JSON.stringify(state.contacts));
     },
   },
 });
